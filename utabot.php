@@ -16,7 +16,7 @@ $halp .= "-p <port>        [Optional] Port to connect to, defaults to 6667\n";
 $halp .= "-n <nickname>    Nickname to use\n";
 $halp .= "-r <realname>    [Optional] Real name to use. If not specified, nickname value will be used\n";
 $halp .= "-c '<channels>'  IRC channels enclosed in double or single quotes, separated by spaces\n";
-$halp .= "-a <password>    Administration password (required for bot related features like changing nicknames)\n\n";
+$halp .= "-a <password>    [Optional] Administration password (required for bot related features like changing nicknames)\n\n";
 
 $shortopts  = "";
 $shortopts .= "h::"; // help
