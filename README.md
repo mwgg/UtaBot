@@ -13,7 +13,7 @@ Supplying `-h` brings up the help message.
 -n <nickname>    Nickname to use
 -r <realname>    [Optional] Real name to use. If not specified, nickname value will be used
 -c '<channels>'  IRC channels enclosed in double or single quotes, separated by spaces
--a <password>    Administration password (required for bot related features like changing nicknames)
+-a <password>    [Optional] Administration password (required for bot related features like changing nicknames)
 ```
 Upon executing utabot.php you will also be prompted for an optional authentication message to be passed to the server, such as `QUOTE PASS password`, `NICKSERV identify password`, or whatever the case may be.
 ###Commands
