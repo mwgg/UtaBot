@@ -37,6 +37,8 @@ Commands issued from a channel would produce a response on said channel. Likewis
 * `!greatcircle <ICAO> <ICAO>` or `!gc <ICAO> <ICAO>` produces great circle distance between two airports defined by ICAO codes (requires [mwgg/Airports](https://github.com/mwgg/Airports) and [mwgg/GreatCircle](https://github.com/mwgg/GreatCircle))
 * `!airport <ICAO>` displays airport information, such as name, city, country, coordinates, elevation, local time, sunrise, sunset (requires [mwgg/Airports](https://github.com/mwgg/Airports))
 
+Apart from the commands above, all messages are analyzed to find URLs and fetch the respective pages' titles and display them on the channel.
+
 ###Plugin guidelines
 Plugins contain sets of functions to be executable as commands, and are defined in *.php files inside plugins subdirectory and are automatically loaded at execution.
 
@@ -47,3 +49,5 @@ Return value can be a string or an array. Array elements will be returned back t
 If the returned value should be sent to a different channel, than the command came from, the return value must be an array and must contain an element `chan` with the name of the channel.
 
 If the response should instead go to the server directly, the array return must contain an element `server` with any value.
+
+Misc.php contains a method `analyze`, which checks every message received from active channels. At the moment, this method checks if a message contains URLs and loads their page titles, and may be extended to check for other things and append responses to the `$result` array.
