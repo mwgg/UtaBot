@@ -16,6 +16,8 @@ Supplying `-h` brings up the help message.
 -a <password>    [Optional] Administration password (required for bot related features like changing nicknames)
 ```
 Upon executing utabot.php you will also be prompted for an optional authentication message to be passed to the server, such as `QUOTE PASS password`, `NICKSERV identify password`, or whatever the case may be.
+###Dependencies
+Certain commands require extra files (maintained by me in other repos), which are noted below. Please supply them in the appropriate directories or remove links to these files from utabot.php and plugins/Airports.php.
 ###Commands
 Certain commands, like changing bot nickname or requesting the bot to join other channels require Bot administrator password to be supplied. This password is set at launch using the `-a` parameter.
 Commands issued from a channel would produce a response on said channel. Likewise, PM commands will be responded to with PM.
