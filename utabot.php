@@ -6,8 +6,6 @@ require_once("IRC.php");
 require_once("Actions.php");
 require_once("Misc.php");
 
-require_once("class/github.com/mwgg/GreatCircle/GreatCircle.php");
-
 foreach (glob( dirname(__FILE__) . "/plugins/*.php" ) as $filename) { require_once($filename); }
 
 $halp  = "\nUsage: php bot.php [options]\n\n";
