@@ -32,6 +32,14 @@ class Core extends Actions {
         $toServer["server"] = "true";
         return $toServer;
     }
+
+    public static function quit($channel, $nickname, $args) {
+        global $adminPass;
+        if ( $args[0] != $adminPass ) { return NULL; }
+        $toServer[] = "QUIT";
+        $toServer["server"] = "true";
+        return $toServer;
+    }
     
     // if Action method returns an array with "server" element, other elements will be sent to the server
     public static function join($channel, $nickname, $args) {

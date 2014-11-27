@@ -6,6 +6,11 @@ Class Airports extends Actions {
      * Users shall supply two 4-letter airport ICAO codes separated by spaces
      */
     public static function gc($channel, $nickname, $args) {
+
+        $GreatCircle = dirname(dirname(__FILE__)) . "class/github.com/mwgg/GreatCircle/GreatCircle.php";
+        if ( !file_exists($GreatCircle) ) { return NULL; }
+        require_once($GreatCircle);
+
         if ( count($args) == 2 ) {
             
             $filename = dirname(dirname(__FILE__)) . "/data/github.com/mwgg/Airports/airports.json";
