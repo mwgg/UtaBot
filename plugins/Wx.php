@@ -12,7 +12,7 @@ class Wx extends Actions {
             $msg = array();
             
             foreach($args as $icao) {
-                $url = "http://weather.noaa.gov/pub/data/observations/metar/stations/".strtoupper($icao).".TXT";
+                $url = "http://tgftp.nws.noaa.gov/data/observations/metar/stations/".strtoupper($icao).".TXT";
                 $metar = file_get_contents($url);
                 if ( $metar !== false ) {
                     $metar = explode("\n", $metar);
