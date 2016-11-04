@@ -5,6 +5,7 @@ class IRC {
 
     private $socket;
     private $actions;
+    private $timers;
 
     private $server;
     private $port;
