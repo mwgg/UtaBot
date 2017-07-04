@@ -1,7 +1,7 @@
 UtaBot
 ======
 Simple IRC bot, written in PHP, extensible with plugins.
-###Usage
+### Usage
 UtaBot is launched from the command line with supplied parameters.
 ```
 php utabot.php -s irc.server.net -p 6667 -n UtaBot -r Bot -c "#chan1 #chan2" -a passwd
@@ -18,10 +18,10 @@ Supplying `-h` brings up the help message.
 Upon executing utabot.php you will also be prompted for an optional authentication message to be passed to the server, such as `QUOTE PASS password`, `NICKSERV identify password`, or whatever the case may be.
 
 Airports.php plugin requires extra files (maintained by me in other repos), which are noted below. Please supply them in the appropriate directories to enable those commands.
-###Commands
+### Commands
 Certain commands, like changing bot nickname or requesting the bot to join other channels require Bot administrator password to be supplied. This password is set at launch using the `-a` parameter.
 Commands issued from a channel would produce a response on said channel. Likewise, PM commands will be responded to with PM.
-####Core
+#### Core
 * `!help` brings up the defined help message listing available commands
 * `!say <#chan> <message>` sends the message to a particular channel (the bot must be on the channel)
 * `!server <passwd> <message>` sends a raw message to the server, to perform administrative or other actions otherwise not available by standard commands. Administrator password must be supplied
@@ -31,7 +31,7 @@ Commands issued from a channel would produce a response on said channel. Likewis
 * `!nick <passwd> <nickname>` changes bot's nickname
 * `!uptime` shows bot uptime
 
-####Other commands
+#### Other commands
 * `!lebowski` or `!l` will produce a random quote from The Big Lebowski (explicit content)
 * `!carlin` or `!c` will produce a random quote by George Carlin (explicit content)
 * `!metar <ICAO> [ICAO ...]` displays aviation weather reports (METARs) for the supplied 4-letter airport ICAO codes
@@ -42,7 +42,7 @@ Commands issued from a channel would produce a response on said channel. Likewis
 
 Apart from the commands above, all messages are analyzed to find URLs and fetch the respective pages' titles and display them on the channel.
 
-###Plugin guidelines
+### Plugin guidelines
 Plugins contain sets of functions to be executable as commands, and are defined in *.php files inside plugins subdirectory and are automatically loaded at execution.
 
 Each plugin must be a PHP class extending the class `Actions`, containing methods with lowercase names corresponding to commands to be called by users. Each of these methods will be called any time a command with the same name has been issued, and shall accept three arguments: `String $channel, String $nickname, Array $arguments` (name of the channel, nickname of the user issuing the command, and an array of everything that has been supplied after the command, separated by spaces.
