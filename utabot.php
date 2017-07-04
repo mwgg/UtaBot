@@ -4,6 +4,8 @@ date_default_timezone_set("UTC");
 
 require_once("IRC.php");
 require_once("Actions.php");
+require_once("Timer.php");
+require_once("Timers.php");
 require_once("Misc.php");
 
 foreach (glob( dirname(__FILE__) . "/plugins/*.php" ) as $filename) { require_once($filename); }
